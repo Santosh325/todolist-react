@@ -1,4 +1,6 @@
 {
     "editor.fontLigatures": true,
-    "editor.quickSuggestions.comments": true
+    "editor.quickSuggestions.comments": true,
+    "editor.fontFamily": "Fira Code",
+    "editor.fontWeight": "400"
 }

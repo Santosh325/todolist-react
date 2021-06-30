@@ -9,8 +9,9 @@ function App() {
   const [input, setInput] = useState('');
 
   useEffect(() => {
+    console.log('👾 ','hello');
      db.collection('todos').orderBy('timestamp','desc').onSnapshot(snapshot => {
-       setTodos(snapshot.docs.map(doc => doc.data().todo))
+       setTodos(snapshot.docs.map(doc => ({id: doc.id, todo: doc.data().todo})))
      })
   }, [input])
   
@@ -37,11 +38,11 @@ function App() {
   Add Todos
 </Button>
       </form>
-      
+
       <ul>
         {
          todos.map(todo => (
-           <Todo text={todo}/>
+           <Todo todo={todo}/>
          ))
         }
      
